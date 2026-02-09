@@ -7,20 +7,20 @@ import Balancer from "react-wrap-balancer";
 export function SpotlightLogoCloud() {
   const logos = [
     {
-      name: "Aceternity UI",
-      src: "https://assets.aceternity.com/pro/logos/aceternity-ui.png",
+      name: "Aerodrome",
+      src: "/logos/aerodrome.svg",
     },
     {
-      name: "Gamity",
-      src: "https://assets.aceternity.com/pro/logos/gamity.png",
+      name: "Uniswap",
+      src: "/logos/uniswap.svg",
     },
     {
-      name: "Host it",
-      src: "https://assets.aceternity.com/pro/logos/hostit.png",
+      name: "Circle",
+      src: "/logos/circle.svg",
     },
     {
-      name: "Asteroid Kit",
-      src: "https://assets.aceternity.com/pro/logos/asteroid-kit.png",
+      name: "Coinbase",
+      src: "/logos/coinbase.svg",
     },
   ];
 
@@ -34,13 +34,12 @@ export function SpotlightLogoCloud() {
               "bg-clip-text text-transparent"
             )}
           >
-            Trusted by Industry Leaders
+            Built on Battle Tested Protocols
           </h2>
         </Balancer>
       </div>
       <p className="text-center max-w-lg mx-auto text-base md:text-lg font-sans text-neutral-500 mt-4 mb-8 md:mb-10 px-4">
-        Join the ranks of forward-thinking companies already leveraging our AI
-        technology
+        Powered by industry-leading DeFi protocols and infrastructure
       </p>
       <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-6 md:gap-10 w-full max-w-3xl mx-auto relative px-4">
         {logos.map((logo, idx) => (

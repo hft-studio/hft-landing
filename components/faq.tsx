@@ -6,29 +6,24 @@ import { IconArrowRight } from "@/icons/arrow-right";
 
 const FAQs = [
   {
-    question: "What models does AI Assist leverage?",
+    question: "What is HFT Labs and how does it work?",
     answer:
-      "AI Assist uses state-of-the-art language models to provide accurate and helpful responses to your queries.",
+      "HFT Labs is a next-generation fintech company that revolutionizes DeFi through AI-powered investment strategies. Our platform automates liquidity pool investing, optimizes portfolio management, and provides advanced crypto investment tools accessible to all users.",
   },
   {
-    question: "How does AI Assist use my data?",
+    question: "What is a liquidity pool?",
     answer:
-      "Your data is handled with strict security measures. Any information used to prompt AI Assist is shared with our AI provider solely for generating responses. Data is automatically deleted within 48 hours of a request.",
+      "A liquidity pool is a smart contract on a decentralized exchange that holds pairs of tokens allowing users to trade directly without intermediaries. Investors deposit their assets into the pool to provide liquidity, earning fees or rewards. This system enables efficient trading, price discovery and decentralized finance.",
   },
   {
-    question: "How accurate are AI Assist's responses?",
+    question: "Is my investment safe with HFT Labs?",
     answer:
-      "AI Assist strives for high accuracy by leveraging advanced AI models and continuous improvements. However, we recommend verifying critical information from multiple sources.",
+      "We protect all users through Coinbase embedded wallets which are self-custodial by default. Built on trusted Coinbase infrastructure, they enable instant on-chain functionality and enterprise grade security.",
   },
   {
-    question: "How much does AI Assist cost?",
+    question: "What cryptocurrencies and DeFi protocols do you support?",
     answer:
-      "We offer flexible pricing plans to suit different needs. Contact our sales team for detailed pricing information.",
-  },
-  {
-    question: "How do I get access to AI Assist?",
-    answer:
-      "You can sign up for AI Assist through our website. We offer both individual and enterprise access options.",
+      "We support major cryptocurrencies including Bitcoin and Ethereum. Our platform interacts with major DeFi protocols such as Aerodrome on the Base network.",
   },
 ];
 export function FrequentlyAskedQuestions() {
@@ -47,8 +42,7 @@ export function FrequentlyAskedQuestions() {
         </h2>
       </div>
       <p className="max-w-lg text-sm  text-center mx-auto mt-4 text-neutral-400 px-4 md:px-0">
-        Simplify crypto investing, trading, and portfolio management with
-        cutting-edge tools designed for everyone—from beginners to pros.
+        Get answers to common questions about HFT Labs and our DeFi investment platform.
       </p>
       <div className="mt-10 md:mt-20 max-w-3xl mx-auto divide-y divide-neutral-800">
         {FAQs.map((faq, index) => (
