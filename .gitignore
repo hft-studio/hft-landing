@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# brand asset source files
+/1_Base Brand Assets/
+/Polygon/
+/branding/
