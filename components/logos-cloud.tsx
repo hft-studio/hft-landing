@@ -7,20 +7,24 @@ import Balancer from "react-wrap-balancer";
 export function SpotlightLogoCloud() {
   const logos = [
     {
-      name: "Aerodrome",
-      src: "/logos/aerodrome.svg",
+      name: "Polygon",
+      src: "/logos/polygon.svg",
+      invert: false,
     },
     {
       name: "Uniswap",
       src: "/logos/uniswap.svg",
+      invert: false,
     },
     {
       name: "Circle",
       src: "/logos/circle.svg",
+      invert: false,
     },
     {
-      name: "Coinbase",
-      src: "/logos/coinbase.svg",
+      name: "Base",
+      src: "/logos/base.svg",
+      invert: false,
     },
   ];
 
@@ -34,12 +38,12 @@ export function SpotlightLogoCloud() {
               "bg-clip-text text-transparent"
             )}
           >
-            Built on Battle Tested Protocols
+            Invest With Confidence
           </h2>
         </Balancer>
       </div>
       <p className="text-center max-w-lg mx-auto text-base md:text-lg font-sans text-neutral-500 mt-4 mb-8 md:mb-10 px-4">
-        Powered by industry-leading DeFi protocols and infrastructure
+        Access the top DEFI protocols through a single interface.
       </p>
       <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-6 md:gap-10 w-full max-w-3xl mx-auto relative px-4">
         {logos.map((logo, idx) => (
@@ -52,7 +56,7 @@ export function SpotlightLogoCloud() {
               alt={logo.name}
               width={300}
               height={300}
-              className="w-full max-w-[200px] object-contain select-none filter invert"
+              className={cn("w-full max-w-[200px] object-contain select-none", logo.invert && "filter invert")}
               draggable={false}
             />
           </div>
