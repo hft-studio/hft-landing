@@ -9,7 +9,6 @@ import {
 } from "motion/react";
 import Link from "next/link";
 import React, { useRef, useState } from "react";
-import { Button } from "./button";
 import { Logo } from "./logo";
 
 interface NavbarProps {
@@ -135,38 +134,21 @@ const DesktopNav = ({ navItems, visible }: NavbarProps) => {
         ))}
       </motion.div>
       <div className="flex items-center gap-2">
-        <AnimatePresence mode="popLayout" initial={false}>
-          {!visible && (
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 25,
-                },
-              }}
-              exit={{
-                scale: 0.8,
-                opacity: 0,
-                transition: {
-                  duration: 0.2,
-                },
-              }}
-            >
-              <Button
-                as={Link}
-                href="/"
-                variant="primary"
-                className="hidden md:block rounded-full bg-white/20 hover:bg-white/30 text-white border-0"
-              >
-                Get Started Now
-              </Button>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <motion.button
+          whileTap={{ scale: 0.98 }}
+          transition={{
+            type: "spring",
+            stiffness: 500,
+            damping: 30,
+            mass: 0.6,
+          }}
+          onClick={() => {
+            window.open("https://hft.studio", "_blank");
+          }}
+          className="rounded-full bg-white px-8 py-2 text-sm font-bold text-black shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset]"
+        >
+          Dashboard
+        </motion.button>
       </div>
     </motion.div>
   );
@@ -244,6 +226,16 @@ const MobileNav = ({ navItems, visible }: NavbarProps) => {
                   </Link>
                 )
               )}
+              <motion.button
+                whileTap={{ scale: 0.98 }}
+                onClick={() => {
+                  setOpen(false);
+                  window.open("https://hft.studio", "_blank");
+                }}
+                className="mt-2 w-full rounded-full bg-white px-4 py-2 text-sm font-bold text-black shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset]"
+              >
+                Dashboard
+              </motion.button>
             </motion.div>
           )}
         </AnimatePresence>
