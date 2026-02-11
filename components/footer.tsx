@@ -2,42 +2,21 @@ import Link from "next/link";
 import React from "react";
 import { Logo } from "./logo";
 import {
+  IconBrandGithub,
   IconBrandLinkedin,
   IconBrandTwitter,
 } from "@tabler/icons-react";
 
 export function Footer() {
-  const documentation = [
-    { title: "Getting Started", href: "#" },
-    { title: "API Reference", href: "#" },
-    { title: "Integrations", href: "#" },
-    { title: "Examples", href: "#" },
-    { title: "SDKs", href: "#" },
-  ];
-
-  const resources = [
-    { title: "Changelog", href: "#" },
-    { title: "Pricing", href: "#" },
-    { title: "Status", href: "#" },
-    { title: "Webhooks", href: "#" },
-  ];
-
-  const company = [
-    { title: "Blog", href: "#" },
-    { title: "Contact", href: "#" },
-    { title: "Customers", href: "#" },
-    { title: "Brand", href: "#" },
-  ];
-
   const legal = [
-    { title: "Acceptable Use", href: "#" },
-    { title: "Privacy Policy", href: "#" },
+    { title: "Privacy Policy", href: "/privacy" },
     { title: "Terms of Service", href: "/terms" },
   ];
 
   const socials = [
     { title: "Twitter", href: "https://x.com/HftStudio", icon: IconBrandTwitter },
     { title: "LinkedIn", href: "https://www.linkedin.com/company/hft-labs", icon: IconBrandLinkedin },
+    { title: "GitHub", href: "https://github.com/hft-studio", icon: IconBrandGithub },
   ];
 
   return (
@@ -61,55 +40,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-20">
-            <div className="flex flex-col space-y-4">
-              <p className="text-white font-semibold">Documentation</p>
-              <ul className="space-y-3">
-                {documentation.map((item, idx) => (
-                  <li key={`doc-${idx}`}>
-                    <Link
-                      href={item.href}
-                      className="hover:text-white transition-colors"
-                    >
-                      {item.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex flex-col space-y-4">
-              <p className="text-white font-semibold">Resources</p>
-              <ul className="space-y-3">
-                {resources.map((item, idx) => (
-                  <li key={`resource-${idx}`}>
-                    <Link
-                      href={item.href}
-                      className="hover:text-white transition-colors"
-                    >
-                      {item.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex flex-col space-y-4">
-              <p className="text-white font-semibold">Company</p>
-              <ul className="space-y-3">
-                {company.map((item, idx) => (
-                  <li key={`company-${idx}`}>
-                    <Link
-                      href={item.href}
-                      className="hover:text-white transition-colors"
-                    >
-                      {item.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
+          <div>
             <div className="flex flex-col space-y-4">
               <p className="text-white font-semibold">Legal</p>
               <ul className="space-y-3">

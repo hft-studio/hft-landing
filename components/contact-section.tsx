@@ -1,11 +1,43 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { IconMailFilled } from "@tabler/icons-react";
 import { useId } from "react";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 
 export function ContactFormGridWithDetails() {
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("submitting");
+    setErrorMessage("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        company: formData.get("company"),
+        message: formData.get("message"),
+      }),
+    });
+
+    if (res.ok) {
+      setStatus("success");
+      form.reset();
+    } else {
+      const data = await res.json().catch(() => ({}));
+      setErrorMessage(data.error || "Something went wrong. Please try again.");
+      setStatus("error");
+    }
+  }
+
   return (
     <div id="contact" className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 py-10 md:px-6 md:py-20 lg:grid-cols-2">
       <div className="relative flex flex-col items-center overflow-hidden lg:items-start">
@@ -49,7 +81,7 @@ export function ContactFormGridWithDetails() {
           />
         </div>
       </div>
-      <div className="relative mx-auto flex w-full max-w-2xl flex-col items-start gap-4 overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-900 to-neutral-950 p-4 sm:p-10">
+      <form onSubmit={handleSubmit} className="relative mx-auto flex w-full max-w-2xl flex-col items-start gap-4 overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-900 to-neutral-950 p-4 sm:p-10">
         <Grid size={20} />
         <div className="relative z-20 mb-4 w-full">
           <label
@@ -60,7 +92,9 @@ export function ContactFormGridWithDetails() {
           </label>
           <input
             id="name"
+            name="name"
             type="text"
+            required
             placeholder="Your name"
             className="shadow-input h-10 w-full rounded-md border border-neutral-800 bg-neutral-800 pl-4 text-sm text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-600 focus:outline-none active:outline-none"
           />
@@ -74,7 +108,9 @@ export function ContactFormGridWithDetails() {
           </label>
           <input
             id="email"
+            name="email"
             type="email"
+            required
             placeholder="you@example.com"
             className="shadow-input h-10 w-full rounded-md border border-neutral-800 bg-neutral-800 pl-4 text-sm text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-600 focus:outline-none active:outline-none"
           />
@@ -88,6 +124,7 @@ export function ContactFormGridWithDetails() {
           </label>
           <input
             id="company"
+            name="company"
             type="text"
             placeholder="Your company"
             className="shadow-input h-10 w-full rounded-md border border-neutral-800 bg-neutral-800 pl-4 text-sm text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-600 focus:outline-none active:outline-none"
@@ -102,15 +139,27 @@ export function ContactFormGridWithDetails() {
           </label>
           <textarea
             id="message"
+            name="message"
             rows={5}
+            required
             placeholder="Type your message here"
             className="shadow-input w-full rounded-md border border-neutral-800 bg-neutral-800 pt-4 pl-4 text-sm text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-600 focus:outline-none active:outline-none"
           />
         </div>
-        <button className="relative z-10 flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium text-black shadow-[0px_1px_0px_0px_#FFFFFF20_inset] transition duration-200 hover:bg-neutral-200 md:text-sm">
-          Submit
+        <button
+          type="submit"
+          disabled={status === "submitting"}
+          className="relative z-10 flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium text-black shadow-[0px_1px_0px_0px_#FFFFFF20_inset] transition duration-200 hover:bg-neutral-200 disabled:opacity-50 md:text-sm"
+        >
+          {status === "submitting" ? "Sending..." : "Submit"}
         </button>
-      </div>
+        {status === "success" && (
+          <p className="relative z-20 text-sm text-green-400">Message sent successfully!</p>
+        )}
+        {status === "error" && (
+          <p className="relative z-20 text-sm text-red-400">{errorMessage}</p>
+        )}
+      </form>
     </div>
   );
 }
