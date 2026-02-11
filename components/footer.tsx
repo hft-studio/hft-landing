@@ -32,7 +32,7 @@ export function Footer() {
   const legal = [
     { title: "Acceptable Use", href: "#" },
     { title: "Privacy Policy", href: "#" },
-    { title: "Terms of Service", href: "#" },
+    { title: "Terms of Service", href: "/terms" },
   ];
 
   const socials = [

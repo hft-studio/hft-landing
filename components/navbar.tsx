@@ -1,9 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { IconMenu2, IconX } from "@tabler/icons-react";
 import {
   motion,
-  AnimatePresence,
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
@@ -142,91 +140,44 @@ const DesktopNav = ({ navItems, visible }: NavbarProps) => {
 };
 
 const MobileNav = ({ navItems, visible }: NavbarProps) => {
-  const [open, setOpen] = useState(false);
   return (
-    <>
-      <motion.div
-        animate={{
-          backdropFilter: "blur(16px)",
-          background: visible ? "rgba(0, 0, 0, 0.7)" : "rgba(0, 0, 0, 0.4)",
-          width: visible ? "80%" : "90%",
-          y: visible ? 0 : 8,
-          borderRadius: open ? "24px" : "full",
-          padding: "8px 16px",
-        }}
-        initial={{
-          width: "80%",
-          background: "rgba(0, 0, 0, 0.4)",
-        }}
+    <motion.div
+      animate={{
+        backdropFilter: "blur(16px)",
+        background: visible ? "rgba(0, 0, 0, 0.7)" : "rgba(0, 0, 0, 0.4)",
+        width: visible ? "80%" : "90%",
+        y: visible ? 0 : 8,
+        padding: "8px 16px",
+      }}
+      initial={{
+        width: "80%",
+        background: "rgba(0, 0, 0, 0.4)",
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 400,
+        damping: 30,
+      }}
+      className={cn(
+        "flex relative lg:hidden w-full justify-between items-center max-w-[calc(100vw-2rem)] mx-auto z-50 backdrop-saturate-[1.8] border border-solid border-white/40 rounded-full"
+      )}
+    >
+      <Logo />
+      <motion.button
+        whileTap={{ scale: 0.98 }}
         transition={{
           type: "spring",
-          stiffness: 400,
+          stiffness: 500,
           damping: 30,
+          mass: 0.6,
         }}
-        className={cn(
-          "flex relative flex-col lg:hidden w-full justify-between items-center max-w-[calc(100vw-2rem)] mx-auto z-50 backdrop-saturate-[1.8] border border-solid border-white/40 rounded-full"
-        )}
+        onClick={() => {
+          window.open("https://hft.studio", "_blank");
+        }}
+        className="rounded-full bg-white px-6 py-2 text-sm font-bold text-black shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset]"
       >
-        <div className="flex flex-row justify-between items-center w-full">
-          <Logo />
-          {open ? (
-            <IconX className="text-white/90" onClick={() => setOpen(!open)} />
-          ) : (
-            <IconMenu2
-              className="text-white/90"
-              onClick={() => setOpen(!open)}
-            />
-          )}
-        </div>
-
-        <AnimatePresence>
-          {open && (
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: -20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              exit={{
-                opacity: 0,
-                y: -20,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 400,
-                damping: 30,
-              }}
-              className="flex rounded-3xl absolute top-16 bg-black/80 backdrop-blur-xl backdrop-saturate-[1.8] inset-x-0 z-50 flex-col items-start justify-start gap-4 w-full px-6 py-8"
-            >
-              {navItems.map(
-                (navItem: { link: string; name: string }, idx: number) => (
-                  <Link
-                    key={`link=${idx}`}
-                    href={navItem.link}
-                    onClick={() => setOpen(false)}
-                    className="relative text-white/90 hover:text-white transition-colors"
-                  >
-                    <motion.span className="block">{navItem.name}</motion.span>
-                  </Link>
-                )
-              )}
-              <motion.button
-                whileTap={{ scale: 0.98 }}
-                onClick={() => {
-                  setOpen(false);
-                  window.open("https://hft.studio", "_blank");
-                }}
-                className="mt-2 w-full rounded-full bg-white px-4 py-2 text-sm font-bold text-black shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset]"
-              >
-                Dashboard
-              </motion.button>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
-    </>
+        Dashboard
+      </motion.button>
+    </motion.div>
   );
 };
