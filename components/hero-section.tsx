@@ -6,20 +6,6 @@ import { cn } from "@/lib/utils";
 export function HeroWithCenteredImage() {
   return (
     <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col overflow-hidden pt-20 md:pt-40">
-      <motion.div
-        initial={{ y: 40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeOut", duration: 0.5 }}
-        className="flex justify-center"
-      >
-        <Badge
-          onClick={() => {
-            console.log("clicked");
-          }}
-        >
-          We&apos;ve raised $69M seed funding
-        </Badge>
-      </motion.div>
       <motion.h1
         initial={{ y: 40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
