@@ -72,15 +72,15 @@ export function TvlChart({ data, height = 400 }: TvlChartProps) {
     });
 
     const areaSeries = chart.addSeries(AreaSeries, {
-      lineColor: "#3b82f6",
-      topColor: "rgba(59, 130, 246, 0.3)",
-      bottomColor: "rgba(59, 130, 246, 0.02)",
+      lineColor: "#22c55e",
+      topColor: "rgba(34, 197, 94, 0.3)",
+      bottomColor: "rgba(34, 197, 94, 0.02)",
       lineWidth: 2,
       priceLineVisible: false,
       lastValueVisible: false,
       crosshairMarkerRadius: 4,
-      crosshairMarkerBorderColor: "#3b82f6",
-      crosshairMarkerBackgroundColor: "#3b82f6",
+      crosshairMarkerBorderColor: "#22c55e",
+      crosshairMarkerBackgroundColor: "#22c55e",
     });
 
     areaSeries.setData(data);

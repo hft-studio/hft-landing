@@ -40,6 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# playwright
+.playwright-mcp/
+
 # brand asset source files
 /1_Base Brand Assets/
 /Polygon/
