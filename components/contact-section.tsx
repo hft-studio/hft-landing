@@ -56,21 +56,11 @@ export function ContactFormGridWithDetails() {
 
         <div className="mt-10 hidden flex-col items-center gap-4 md:flex-row lg:flex">
           <p className="text-sm text-neutral-400">
-            contact@hftlabs.io
-          </p>
-
-          <div className="h-1 w-1 rounded-full bg-neutral-400" />
-          <p className="text-sm text-neutral-400">
-            +1 (800) 123 XX21
-          </p>
-          <div className="h-1 w-1 rounded-full bg-neutral-400" />
-
-          <p className="text-sm text-neutral-400">
-            support@hftlabs.io
+            michael@hft.studio
           </p>
         </div>
         <div className="div relative mt-20 flex w-[600px] flex-shrink-0 -translate-x-10 items-center justify-center [perspective:800px] [transform-style:preserve-3d] sm:-translate-x-0 lg:-translate-x-32">
-          <Pin className="top-2 -left-[2%]" />
+          <Pin className="top-0 -left-[6%]" />
 
           <img
             src="https://assets.aceternity.com/pro/world.svg"
