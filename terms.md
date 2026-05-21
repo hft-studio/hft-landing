@@ -55,5 +55,5 @@ These Terms are governed by the laws of the State of Wyoming, United States, wit
 Severability: If any provision of these Terms is held invalid, the remainder shall continue in full force.
 No Waiver: Our failure to enforce any right does not constitute a waiver.
 Entire Agreement: These Terms constitute the entire agreement between you and HFT Studio LLC.
-Contact: For questions, contact us at michael@hft.studio
+Contact: For questions, contact us at michael@hftlabs.xyz
 By using the Service, you acknowledge that you have read, understood, and agree to these Terms.

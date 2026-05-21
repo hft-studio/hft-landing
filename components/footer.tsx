@@ -52,10 +52,10 @@ export function Footer() {
                 <p>Sheridan, WY 82801</p>
                 <p>
                   <a
-                    href="mailto:michael@hft.studio"
+                    href="mailto:michael@hftlabs.xyz"
                     className="hover:text-white transition-colors"
                   >
-                    michael@hft.studio
+                    michael@hftlabs.xyz
                   </a>
                 </p>
               </address>

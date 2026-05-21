@@ -56,7 +56,7 @@ export function ContactFormGridWithDetails() {
 
         <div className="mt-10 hidden flex-col items-center gap-4 md:flex-row lg:flex">
           <p className="text-sm text-neutral-400">
-            michael@hft.studio
+            michael@hftlabs.xyz
           </p>
         </div>
         <div className="div relative mt-20 flex w-[600px] flex-shrink-0 -translate-x-10 items-center justify-center [perspective:800px] [transform-style:preserve-3d] sm:-translate-x-0 lg:-translate-x-32">

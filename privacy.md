@@ -41,7 +41,7 @@ We retain your email and wallet address information for as long as your account 
 We implement reasonable technical and organizational measures to protect your information. However, no method of transmission over the internet or electronic storage is completely secure. We cannot guarantee the absolute security of your data.
 
 7. Your Rights
-You may request the following by contacting us at michael@hft.studio:
+You may request the following by contacting us at michael@hftlabs.xyz:
 
 Access to the personal information we hold about you.
 Correction of inaccurate information.
@@ -63,4 +63,4 @@ If you have questions about this Privacy Policy, contact us at:
 HFT Studio LLC
 30 N Gould Street, Ste N
 Sheridan, Wyoming 82801
-Email: michael@hft.studio
+Email: michael@hftlabs.xyz
