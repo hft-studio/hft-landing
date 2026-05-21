@@ -1,17 +1,15 @@
-import CTA from "@/components/cta";
 import { ContactFormGridWithDetails } from "@/components/contact-section";
-import { FrequentlyAskedQuestions } from "@/components/faq";
 import { HeroWithCenteredImage } from "@/components/hero-section";
-import { SpotlightLogoCloud } from "@/components/logos-cloud";
+import { Products } from "@/components/products";
+import { Services } from "@/components/services";
 
 export default function Home() {
   return (
     <div>
       <HeroWithCenteredImage />
-      <SpotlightLogoCloud />
-      <FrequentlyAskedQuestions />
+      <Services />
+      <Products />
       <ContactFormGridWithDetails />
-      <CTA />
     </div>
   );
 }

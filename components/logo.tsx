@@ -9,11 +9,11 @@ export const Logo = () => {
       className="flex items-center shrink-0 relative z-20 px-2 py-1"
     >
       <Image
-        src="/banner.svg"
+        src="/hft-black.png"
         alt="HFT Labs"
-        width={120}
-        height={30}
-        className="h-7 w-auto"
+        width={500}
+        height={500}
+        className="h-14 w-14 rounded-lg"
         priority
       />
     </Link>

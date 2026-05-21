@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "HFT Labs",
   description:
-    "HFT Labs — DeFi yield optimization platform. Non-custodial, automated trading strategies.",
+    "HFT Labs is an AI-native software development firm. We offer consulting and development services, and build our own products at the intersection of AI, digital assets, and data-driven web applications.",
 };
 
 export default function RootLayout({

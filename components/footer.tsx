@@ -28,9 +28,13 @@ export function Footer() {
       </div>
 
       <div className="max-w-7xl my-28 mx-auto text-sm text-neutral-400 flex flex-col justify-between md:px-8">
-        <div className="flex flex-col md:flex-row justify-between">
-          <div className="mb-10 md:mb-0">
+        <div className="flex flex-col gap-10 md:flex-row md:justify-between md:gap-16">
+          <div className="max-w-sm">
             <Logo />
+            <p className="mt-6 text-sm text-neutral-400">
+              An AI-native software development firm building products at the
+              intersection of AI, digital assets, and data.
+            </p>
             <div className="flex gap-3 mt-6">
               {socials.map((social, idx) => (
                 <SocialIcon key={`social-${idx}`} href={social.href}>
@@ -40,7 +44,23 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="flex flex-col gap-10 sm:flex-row sm:gap-16">
+            <div className="flex flex-col space-y-4">
+              <p className="text-white font-semibold">Contact</p>
+              <address className="not-italic space-y-2 text-sm text-neutral-400">
+                <p>30 N Gould St, Ste N</p>
+                <p>Sheridan, WY 82801</p>
+                <p>
+                  <a
+                    href="mailto:michael@hft.studio"
+                    className="hover:text-white transition-colors"
+                  >
+                    michael@hft.studio
+                  </a>
+                </p>
+              </address>
+            </div>
+
             <div className="flex flex-col space-y-4">
               <p className="text-white font-semibold">Legal</p>
               <ul className="space-y-3">
@@ -57,6 +77,11 @@ export function Footer() {
               </ul>
             </div>
           </div>
+        </div>
+
+        <div className="mt-16 border-t border-white/[0.06] pt-8 text-xs text-neutral-500">
+          © {new Date().getFullYear()} HFT Studio. All rights reserved. Doing
+          business as HFT Labs.
         </div>
       </div>
     </div>

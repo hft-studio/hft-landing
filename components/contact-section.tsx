@@ -50,8 +50,8 @@ export function ContactFormGridWithDetails() {
           Contact us
         </h2>
         <p className="mt-8 max-w-lg text-center text-base text-neutral-400 md:text-left">
-          We are always looking for ways to improve our products and services.
-          Contact us and let us know how we can help you.
+          Have a project in mind? Need a team to build it? Tell us what
+          you&apos;re working on and we&apos;ll get back to you within a day.
         </p>
 
         <div className="mt-10 hidden flex-col items-center gap-4 md:flex-row lg:flex">

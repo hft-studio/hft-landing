@@ -5,52 +5,62 @@ import { cn } from "@/lib/utils";
 
 export function HeroWithCenteredImage() {
   return (
-    <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col overflow-hidden pt-20 md:pt-40">
+    <div className="relative mx-auto flex min-h-[90vh] max-w-7xl flex-col items-center justify-center overflow-hidden px-4 pt-28 pb-20 md:pt-40">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-xs text-neutral-300 backdrop-blur-sm"
+      >
+        <span className="relative flex h-1.5 w-1.5">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/60 opacity-75" />
+          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-white" />
+        </span>
+        AI-native software studio
+      </motion.div>
+
       <motion.h1
         initial={{ y: 40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeOut", duration: 0.5 }}
-        className="relative z-10 mx-auto mt-6 max-w-6xl text-center text-2xl font-semibold text-white md:text-4xl lg:text-8xl"
+        className={cn(
+          "relative z-10 mx-auto max-w-5xl text-center text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl",
+          "bg-gradient-to-b from-white via-white to-neutral-500 bg-clip-text text-transparent"
+        )}
       >
-        Turn Idle Crypto Into Passive Income
+        Software for the AI era.
       </motion.h1>
+
       <motion.p
         initial={{ y: 40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeOut", duration: 0.5, delay: 0.2 }}
-        className="relative z-10 mx-auto mt-6 max-w-3xl text-center text-base text-neutral-400 md:text-xl"
+        transition={{ ease: "easeOut", duration: 0.5, delay: 0.15 }}
+        className="relative z-10 mx-auto mt-6 max-w-2xl text-center text-base text-neutral-400 md:text-lg"
       >
-        Stop leaving yield on the table. Our platform continuously optimizes
-        your positions to maximize returns across the best protocols in DeFi.
+        HFT Labs is an AI-native development firm. We design, build, and ship
+        products at the intersection of artificial intelligence, digital assets,
+        and data-driven web applications.
       </motion.p>
+
       <motion.div
-        initial={{ y: 80, opacity: 0 }}
+        initial={{ y: 40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeOut", duration: 0.5, delay: 0.4 }}
-        className="relative z-10 mt-6 flex items-center justify-center gap-4"
+        transition={{ ease: "easeOut", duration: 0.5, delay: 0.3 }}
+        className="relative z-10 mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4"
       >
-        <Button>Get started</Button>
+        <Button as="a" href="#contact">
+          Start a project
+        </Button>
         <Button
           variant="simple"
-          href="#"
+          as="a"
+          href="#products"
           className="group flex items-center space-x-2"
         >
-          <span>Contact us</span>
+          <span>See our work</span>
           <HiArrowRight className="h-3 w-3 stroke-[1px] text-neutral-300 transition-transform duration-200 group-hover:translate-x-1" />
         </Button>
       </motion.div>
-      <div className="relative mt-20 rounded-[32px] border border-neutral-700 bg-neutral-800 p-4">
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 w-full scale-[1.1] bg-gradient-to-b from-transparent via-black/50 to-black" />
-        <div className="rounded-[24px] border border-neutral-700 bg-black p-2">
-          <img
-            src="/screen.png"
-            alt="HFT Labs Dashboard"
-            width={1920}
-            height={1080}
-            className="rounded-[20px]"
-          />
-        </div>
-      </div>
     </div>
   );
 }

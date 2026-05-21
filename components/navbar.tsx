@@ -19,7 +19,9 @@ interface NavbarProps {
 
 export const Navbar = () => {
   const navItems: { name: string; link: string }[] = [
-    { name: "Platform", link: "/platform" },
+    { name: "Services", link: "/#services" },
+    { name: "Products", link: "/#products" },
+    { name: "Contact", link: "/#contact" },
   ];
 
   const ref = useRef<HTMLDivElement>(null);
@@ -54,13 +56,13 @@ const DesktopNav = ({ navItems, visible }: NavbarProps) => {
       animate={{
         backdropFilter: "blur(16px)",
         background: visible ? "rgba(0, 0, 0, 0.7)" : "rgba(0, 0, 0, 0.4)",
-        width: visible ? "38%" : "80%",
-        height: visible ? "48px" : "64px",
+        width: visible ? "44%" : "80%",
+        height: visible ? "72px" : "88px",
         y: visible ? 8 : 0,
       }}
       initial={{
         width: "80%",
-        height: "64px",
+        height: "88px",
         background: "rgba(0, 0, 0, 0.4)",
       }}
       transition={{
@@ -121,7 +123,7 @@ const DesktopNav = ({ navItems, visible }: NavbarProps) => {
         ))}
       </motion.div>
       <div className="flex items-center gap-2">
-        <motion.button
+        <motion.a
           whileTap={{ scale: 0.98 }}
           transition={{
             type: "spring",
@@ -129,13 +131,11 @@ const DesktopNav = ({ navItems, visible }: NavbarProps) => {
             damping: 30,
             mass: 0.6,
           }}
-          onClick={() => {
-            window.open("https://hft.studio", "_blank");
-          }}
-          className="rounded-full bg-white px-8 py-2 text-sm font-bold text-black shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset]"
+          href="/#contact"
+          className="whitespace-nowrap rounded-full bg-white px-5 py-2 text-sm font-bold text-black shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset]"
         >
-          Dashboard
-        </motion.button>
+          Get in touch
+        </motion.a>
       </div>
     </motion.div>
   );
@@ -165,7 +165,7 @@ const MobileNav = ({ navItems, visible }: NavbarProps) => {
       )}
     >
       <Logo />
-      <motion.button
+      <motion.a
         whileTap={{ scale: 0.98 }}
         transition={{
           type: "spring",
@@ -173,13 +173,11 @@ const MobileNav = ({ navItems, visible }: NavbarProps) => {
           damping: 30,
           mass: 0.6,
         }}
-        onClick={() => {
-          window.open("https://hft.studio", "_blank");
-        }}
-        className="rounded-full bg-white px-6 py-2 text-sm font-bold text-black shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset]"
+        href="/#contact"
+        className="whitespace-nowrap rounded-full bg-white px-5 py-2 text-sm font-bold text-black shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset]"
       >
-        Dashboard
-      </motion.button>
+        Get in touch
+      </motion.a>
     </motion.div>
   );
 };
