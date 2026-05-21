@@ -48,3 +48,4 @@ next-env.d.ts
 /1_Base Brand Assets/
 /Polygon/
 /branding/
+.env*.local

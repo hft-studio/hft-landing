@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IconMailFilled } from "@tabler/icons-react";
 import { useId } from "react";
 import { cn } from "@/lib/utils";
@@ -254,13 +254,18 @@ export const Grid = ({
   pattern?: number[][];
   size?: number;
 }) => {
-  const p = pattern ?? [
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-  ];
+  const [p, setP] = useState<number[][]>(pattern ?? []);
+
+  useEffect(() => {
+    if (pattern) return;
+    setP([
+      [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+      [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+      [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+      [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+      [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+    ]);
+  }, [pattern]);
   return (
     <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
       <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/30 to-zinc-900/30 [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] opacity-10">
