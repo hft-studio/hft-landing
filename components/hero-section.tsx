@@ -2,15 +2,47 @@
 import { HiArrowRight } from "react-icons/hi2";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import DotField from "./dot-field";
+import MagicRings from "./magic-rings";
 
 export function HeroWithCenteredImage() {
   return (
     <div className="relative mx-auto flex min-h-[90vh] max-w-7xl flex-col items-center justify-center overflow-hidden px-4 pt-28 pb-20 md:pt-40">
+      <div className="pointer-events-none absolute inset-0 z-0 [mask-image:radial-gradient(ellipse_at_center,black_55%,transparent_95%)]">
+        <DotField
+          dotRadius={1.8}
+          dotSpacing={18}
+          bulgeStrength={80}
+          glowRadius={200}
+          sparkle={false}
+          waveAmplitude={0}
+          gradientFrom="rgba(255, 255, 255, 0.85)"
+          gradientTo="rgba(255, 255, 255, 0.55)"
+          glowColor="rgba(255, 255, 255, 0.18)"
+        />
+      </div>
+
+      <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]">
+        <div className="aspect-square w-[120vw] max-w-[900px] opacity-50">
+          <MagicRings
+            color="#a855f7"
+            colorTwo="#6366f1"
+            ringCount={6}
+            speed={0.6}
+            attenuation={11}
+            lineThickness={2}
+            opacity={0.9}
+            noiseAmount={0.04}
+            parallax={0.05}
+          />
+        </div>
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-xs text-neutral-300 backdrop-blur-sm"
+        className="relative z-10 mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-xs text-neutral-300 backdrop-blur-sm"
       >
         <span className="relative flex h-1.5 w-1.5">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/60 opacity-75" />
