@@ -3,7 +3,7 @@ import path from "path";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | HFT Studio",
+  title: "Terms of Service",
   description: "Terms of Service for HFT Studio LLC",
 };
 

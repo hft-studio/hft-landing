@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const res = await fetch("https://www.hft.studio/platform/api/tvl", {
+  const res = await fetch("https://www.hft.studio/platform/api/tvl?limit=10000", {
     next: { revalidate: 60 },
   });
 

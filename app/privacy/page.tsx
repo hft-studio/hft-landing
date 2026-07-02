@@ -3,7 +3,7 @@ import path from "path";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | HFT Studio",
+  title: "Privacy Policy",
   description: "Privacy Policy for HFT Studio LLC",
 };
 

@@ -10,8 +10,14 @@ export default {
   theme: {
   	extend: {
   		colors: {
-  			background: 'var(--background)',
-  			foreground: 'var(--foreground)'
+  			background: 'hsl(var(--background) / <alpha-value>)',
+  			foreground: 'hsl(var(--foreground) / <alpha-value>)',
+  			border: 'hsl(var(--border) / <alpha-value>)',
+  			primary: 'hsl(var(--primary) / <alpha-value>)',
+  			muted: {
+  				DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
+  				foreground: 'hsl(var(--muted-foreground) / <alpha-value>)'
+  			}
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

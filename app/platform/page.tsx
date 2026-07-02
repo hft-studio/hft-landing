@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { PlatformStats } from "@/components/platform-stats";
 
 export const metadata: Metadata = {
-  title: "Platform Stats | HFT Labs",
+  title: "Platform Stats",
   description:
     "Real-time TVL and platform statistics for HFT Labs DeFi yield optimization.",
 };
